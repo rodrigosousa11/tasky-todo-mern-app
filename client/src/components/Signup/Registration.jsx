@@ -7,7 +7,8 @@ const api_base = "http://localhost:3000";
 
 const Registration = () => {
 	const navigate = useNavigate();
-	const [username, setUsername] = useState("");
+	const [firstName, setFirstName] = useState(""); // Add firstName state
+	const [lastName, setLastName] = useState(""); // Add lastName state
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
@@ -15,9 +16,16 @@ const Registration = () => {
 	const handleRegister = async (e) => {
 		e.preventDefault();
 
+		// Check if the password is at least 8 characters long
+		if (password.length < 8) {
+			setError("Password must be at least 8 characters!");
+			return;
+		}
+
 		try {
 			const response = await axios.post(api_base + "/users/register", {
-				username,
+				firstName,
+				lastName,
 				email,
 				password,
 			});
@@ -26,7 +34,7 @@ const Registration = () => {
 			setError("");
 			navigate("/login");
 		} catch (error) {
-			setError("Username or email already exists");
+			setError("An account with this email already exists");
 		}
 	};
 
@@ -40,9 +48,17 @@ const Registration = () => {
 					<h1 className={styles.label}>Sign up to Tasky</h1>
 					<input
 						type="text"
-						placeholder="Username"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
+						placeholder="First Name" // Change the placeholder to "First Name"
+						value={firstName}
+						onChange={(e) => setFirstName(e.target.value)} // Use setFirstName for first name
+						required
+						className={styles.input}
+					/>
+					<input
+						type="text"
+						placeholder="Last Name" // Change the placeholder to "Last Name"
+						value={lastName}
+						onChange={(e) => setLastName(e.target.value)} // Use setLastName for last name
 						required
 						className={styles.input}
 					/>
@@ -68,7 +84,9 @@ const Registration = () => {
 					</button>
 				</form>
 				<div className={styles.login}>
-					<p className={styles.existing_account}>Have an account already?&nbsp;</p>
+					<p className={styles.existing_account}>
+						Have an account already?&nbsp;
+					</p>
 					<Link to="/login" className={styles.login_link}>
 						Sign In
 					</Link>

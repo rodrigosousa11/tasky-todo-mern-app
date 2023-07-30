@@ -7,7 +7,7 @@ const api_base = "http://localhost:3000";
 
 const Login = ({ setAuthenticated }) => {
 	const navigate = useNavigate();
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
@@ -15,21 +15,21 @@ const Login = ({ setAuthenticated }) => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(api_base + "/users/login", {
-				username,
+				email,
 				password,
 			});
 			const data = response.data;
 
-			if (data.token) {
+			if (data) {
 				setError("");
 				setAuthenticated(true);
-				localStorage.setItem("token", data.token);
+				localStorage.setItem("token", data);
 				navigate("/");
 			} else {
-				setError("Invalid username or password");
+				setError("Invalid email or password");
 			}
 		} catch (error) {
-			setError("Invalid username or password");
+			setError("Invalid email or password");
 		}
 	};
 
@@ -40,12 +40,12 @@ const Login = ({ setAuthenticated }) => {
 			</div>
 			<div className={styles.right}>
 				<form className={styles.form} onSubmit={handleLogin}>
-					<h1 className={styles.label}> Sign in to Tasky</h1>
+					<h1 className={styles.label}>Sign in to Tasky</h1>
 					<input
 						type="text"
-						placeholder="Username"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
+						placeholder="Email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)} 
 						required
 						className={styles.input}
 					/>
