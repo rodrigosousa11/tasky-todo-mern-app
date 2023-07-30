@@ -13,7 +13,6 @@ const authenticateToken = (req, res, next) => {
 		try {
 			const token = req.headers.authorization.split(' ')[1];
 			const decoded = jwt.verify(token, process.env.JWT);
-			console.log('Decoded token payload:', decoded);
 			req.user = decoded.userId;
 			next();
 		} catch (error) {

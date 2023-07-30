@@ -47,17 +47,22 @@ router.put("/update/:id", authenticateToken, async (req, res) => {
 	const taskId = req.params.id;
 	const userId = req.user;
 
-	const todo = await Todo.findOneAndUpdate({ _id: taskId, user: userId });
+	try {
+		const todo = await Todo.findOne({ _id: taskId, user: userId });
 
-	if (!todo) {
-		return res
-			.status(404)
-			.json({ message: "Task not found or unauthorized" });
+		if (!todo) {
+			return res
+				.status(404)
+				.json({ message: "Task not found or unauthorized" });
+		}
+
+		todo.completed = !todo.completed;
+
+		await todo.save();
+		res.json(todo);
+	} catch (error) {
+		res.status(500).json({ message: "Update failed" });
 	}
-
-	todo.completed = !todo.completed;
-	await todo.save();
-	res.json(todo);
 });
 
 module.exports = router;
