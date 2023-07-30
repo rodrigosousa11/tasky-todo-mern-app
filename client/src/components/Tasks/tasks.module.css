@@ -176,7 +176,7 @@ h4 {
 	color: var(--light);
 }
 
-#notasks {
+.notasks {
 	margin-top: 30px;
 	font-size: 20px;
 }
@@ -204,5 +204,13 @@ h4 {
 	}
 	.tasks-page {
 		padding: 20px;
+	}
+
+	.delete-todo svg {
+		font-size: 28px;
+	}
+
+	.leave-container svg {
+		font-size: 40px;
 	}
 }

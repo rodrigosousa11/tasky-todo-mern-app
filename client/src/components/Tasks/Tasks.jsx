@@ -14,9 +14,11 @@ const Tasks = () => {
 	const [popupActive, setPopupActive] = useState(false);
 	const [newTodo, setNewTodo] = useState("");
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [user, setUser] = useState({ firstName: "", lastName: "" });
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		fetchUserData();
 		getTodos();
 	}, []);
 
@@ -24,6 +26,24 @@ const Tasks = () => {
 		localStorage.removeItem("token");
 		navigate("/login");
 		setIsLoggedIn(false);
+	};
+
+	const fetchUserData = async () => {
+		try {
+			const token = localStorage.getItem("token");
+			const response = await axios.get(api_base + "/users/me", {
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			});
+			const userData = response.data;
+			setUser({
+				firstName: userData.firstName,
+				lastName: userData.lastName,
+			});
+		} catch (error) {
+			console.error("Error fetching user data: ", error);
+		}
 	};
 
 	const getTodos = async () => {
@@ -111,7 +131,7 @@ const Tasks = () => {
 			<div className={styles["leave-container"]}>
 				<MdLogout onClick={handleLogout} />
 			</div>
-			<h1>Welcome, Rodrigo</h1>
+			<h1>Welcome, {user.firstName} {user.lastName}</h1>
 			<h4>Your tasks</h4>
 			<div className={styles["todos"]}>
 				{todos.length > 0 ? (
@@ -134,7 +154,7 @@ const Tasks = () => {
 						</div>
 					))
 				) : (
-					<p>You have no tasks yet</p>
+					<p className={styles["notasks"]}>You have no tasks yet</p>
 				)}
 			</div>
 			<div
