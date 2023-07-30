@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-	font-size: 42px;
+	font-size: 40px;
 	font-weight: 700;
 	margin-bottom: 32px;
 }
@@ -19,7 +19,23 @@ h4 {
 	color: var(--dark-alt);
 	text-transform: uppercase;
 	font-weight: 400;
-	margin-bottom: 16px;
+	margin-bottom: 15px;
+}
+
+.leave-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.leave-container svg {
+	cursor: pointer;
+	color: var(--dark);
+	font-size: 45px;
+}
+
+.leave-container svg:hover {
+	transform: scale(1.1);
 }
 
 .todo {
@@ -168,9 +184,13 @@ h4 {
 @media screen and (max-width: 480px) {
 	h1 {
 		font-size: 34px;
-		margin-top: 15px;
-		margin-bottom: 25px;
+		margin: 15px 0 15px 0;
 	}
+
+	h4 {
+		font-size: 20px;
+	}
+	
 	#notasks {
 		margin-top: 20px;
 		font-size: 18px;
@@ -181,5 +201,8 @@ h4 {
 	.popup {
 		width: 90%;
 		padding: 24px;
+	}
+	.tasks-page {
+		padding: 20px;
 	}
 }

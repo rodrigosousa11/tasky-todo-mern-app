@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./tasks.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { IoAddCircle } from "react-icons/io5";
+import { MdLogout } from "react-icons/md";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -106,9 +108,11 @@ const Tasks = () => {
 
 	return (
 		<div className={styles["tasks-page"]}>
+			<div className={styles["leave-container"]}>
+				<MdLogout onClick={handleLogout} />
+			</div>
 			<h1>Welcome, Rodrigo</h1>
 			<h4>Your tasks</h4>
-			<button onClick={handleLogout}>Logout</button>
 			<div className={styles["todos"]}>
 				{todos.length > 0 ? (
 					todos.map((todo) => (
@@ -125,7 +129,7 @@ const Tasks = () => {
 								className={styles["delete-todo"]}
 								onClick={() => deleteTodo(todo._id)}
 							>
-								<AiFillCloseCircle />
+								<RiDeleteBin2Fill />
 							</div>
 						</div>
 					))
