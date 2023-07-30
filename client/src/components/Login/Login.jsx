@@ -29,8 +29,7 @@ const Login = ({ setAuthenticated }) => {
 				setError("Invalid username or password");
 			}
 		} catch (error) {
-			console.error(error);
-			setError("Login failed");
+			setError("Invalid username or password");
 		}
 	};
 
@@ -41,7 +40,7 @@ const Login = ({ setAuthenticated }) => {
 			</div>
 			<div className={styles.right}>
 				<form className={styles.form} onSubmit={handleLogin}>
-					<h1>Sign in to Tasky</h1>
+					<h1 className={styles.label}> Sign in to Tasky</h1>
 					<input
 						type="text"
 						placeholder="Username"

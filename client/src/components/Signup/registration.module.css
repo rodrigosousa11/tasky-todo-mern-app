@@ -17,12 +17,6 @@
 
 .description {
 	font-size: 40px;
-	margin: 0;
-}
-
-h1 {
-	font-size: 34px;
-	margin-bottom: 20px;
 	color: var(--dark);
 }
 
@@ -34,6 +28,11 @@ h1 {
 	align-items: center;
 	height: 100vh;
 	background-color: var(--primary);
+}
+
+.label {
+	font-size: 34px;
+	margin-bottom: 10px;
 }
 
 .form {
@@ -60,7 +59,7 @@ h1 {
 	padding: 15px;
 	margin: 5px 0;
 	font-size: 14px;
-	background-color: #f34646;
+	background-color: var(--red);
 	color: white;
 	border-radius: 5px;
 	text-align: center;

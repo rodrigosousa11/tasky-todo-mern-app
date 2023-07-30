@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./registration.module.css";
 
 const api_base = "http://localhost:3000";
 
 const Registration = () => {
+	const navigate = useNavigate();
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -23,6 +24,7 @@ const Registration = () => {
 
 			console.log("User registered successfully:", response.data);
 			setError("");
+			navigate("/login");
 		} catch (error) {
 			setError("Username or email already exists");
 		}
@@ -35,7 +37,7 @@ const Registration = () => {
 			</div>
 			<div className={styles.right}>
 				<form className={styles.form} onSubmit={handleRegister}>
-					<h1>Sign up to Tasky</h1>
+					<h1 className={styles.label}>Sign up to Tasky</h1>
 					<input
 						type="text"
 						placeholder="Username"
