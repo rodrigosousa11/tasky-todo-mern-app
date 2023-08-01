@@ -67,7 +67,7 @@ npm run dev
 ```md
 # Terminal 2 - Backend
 cd server
-npm run dev
+npm start
 ```
 
 5. Open your browser and access the app.
