@@ -43,7 +43,7 @@ npm install
 ```
 
 ```md
-cd ../server
+cd server
 npm install
 ```
 
@@ -66,7 +66,7 @@ npm run dev
 ```
 ```md
 # Terminal 2 - Backend
-cd server
+cd client
 npm start
 ```
 
