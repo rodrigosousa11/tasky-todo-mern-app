@@ -36,7 +36,8 @@ const Login = ({ setAuthenticated }) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>
-				<h1 className={styles.description}>Tasky</h1>
+				<p className={styles.description}>Will you forget?</p>
+				<p className={styles.description}>Write it down on Tasky</p>
 			</div>
 			<div className={styles.right}>
 				<form className={styles.form} onSubmit={handleLogin}>

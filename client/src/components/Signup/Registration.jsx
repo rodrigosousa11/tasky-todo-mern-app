@@ -7,8 +7,8 @@ const api_base = "http://localhost:3000";
 
 const Registration = () => {
 	const navigate = useNavigate();
-	const [firstName, setFirstName] = useState(""); // Add firstName state
-	const [lastName, setLastName] = useState(""); // Add lastName state
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
@@ -16,7 +16,6 @@ const Registration = () => {
 	const handleRegister = async (e) => {
 		e.preventDefault();
 
-		// Check if the password is at least 8 characters long
 		if (password.length < 8) {
 			setError("Password must be at least 8 characters!");
 			return;
@@ -41,24 +40,25 @@ const Registration = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>
-				<h1 className={styles.description}>Tasky</h1>
+				<p className={styles.description}>Will you forget?</p>
+				<p className={styles.description}>Write it down on Tasky</p>
 			</div>
 			<div className={styles.right}>
 				<form className={styles.form} onSubmit={handleRegister}>
 					<h1 className={styles.label}>Sign up to Tasky</h1>
 					<input
 						type="text"
-						placeholder="First Name" // Change the placeholder to "First Name"
+						placeholder="First Name"
 						value={firstName}
-						onChange={(e) => setFirstName(e.target.value)} // Use setFirstName for first name
+						onChange={(e) => setFirstName(e.target.value)}
 						required
 						className={styles.input}
 					/>
 					<input
 						type="text"
-						placeholder="Last Name" // Change the placeholder to "Last Name"
+						placeholder="Last Name"
 						value={lastName}
-						onChange={(e) => setLastName(e.target.value)} // Use setLastName for last name
+						onChange={(e) => setLastName(e.target.value)}
 						required
 						className={styles.input}
 					/>
