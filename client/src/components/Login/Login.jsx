@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./login.module.css";
@@ -10,6 +10,7 @@ const Login = ({ setAuthenticated }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const formRef = useRef(null);
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -33,20 +34,36 @@ const Login = ({ setAuthenticated }) => {
 		}
 	};
 
+	const handleScrollToForm = () => {
+		if (formRef.current) {
+			formRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.left}>
 				<p className={styles.description}>Will you forget?</p>
 				<p className={styles.description}>Write it down on Tasky</p>
+				<div
+					className={styles.register_button}
+					onClick={handleScrollToForm}
+				>
+					Sign In
+				</div>
 			</div>
 			<div className={styles.right}>
-				<form className={styles.form} onSubmit={handleLogin}>
+				<form
+					ref={formRef}
+					className={styles.form}
+					onSubmit={handleLogin}
+				>
 					<h1 className={styles.label}>Sign in to Tasky</h1>
 					<input
 						type="text"
 						placeholder="Email"
 						value={email}
-						onChange={(e) => setEmail(e.target.value)} 
+						onChange={(e) => setEmail(e.target.value)}
 						required
 						className={styles.input}
 					/>

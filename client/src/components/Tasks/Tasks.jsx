@@ -131,7 +131,9 @@ const Tasks = () => {
 			<div className={styles["leave-container"]}>
 				<MdLogout onClick={handleLogout} />
 			</div>
-			<h1>Welcome, {user.firstName} {user.lastName}</h1>
+			<h1>
+				Welcome, {user.firstName} {user.lastName}
+			</h1>
 			<h4>Your tasks</h4>
 			<div className={styles["todos"]}>
 				{todos.length > 0 ? (
@@ -141,10 +143,17 @@ const Tasks = () => {
 								todo.completed ? styles["is-complete"] : ""
 							}`}
 							key={todo._id}
-							onClick={() => completeTodo(todo._id)}
 						>
-							<div className={styles["checkbox"]}></div>
-							<div className={styles["text"]}>{todo.title}</div>
+							<div
+								className={styles["checkbox"]}
+								onClick={() => completeTodo(todo._id)}
+							></div>
+							<div
+								className={styles["text"]}
+								onClick={() => completeTodo(todo._id)}
+							>
+								{todo.title}
+							</div>
 							<div
 								className={styles["delete-todo"]}
 								onClick={() => deleteTodo(todo._id)}

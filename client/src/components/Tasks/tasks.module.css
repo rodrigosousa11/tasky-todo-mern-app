@@ -6,6 +6,7 @@ body {
 .tasks-page {
 	padding: 40px;
 	height: 100vh;
+	overflow-y: scroll;
 }
 
 h1 {
@@ -72,6 +73,7 @@ h4 {
 
 .todo .text {
 	font-size: 20px;
+	width: 90%;
 	color: var(--light);
 }
 
@@ -189,7 +191,7 @@ h4 {
 @media screen and (max-width: 480px) {
 	h1 {
 		font-size: 30px;
-		margin: 30px 0 15px 0;
+		margin: 25px 0 15px 0;
 	}
 
 	h4 {
@@ -232,5 +234,8 @@ h4 {
 		font-size: 50px;
 		bottom: 40px;
 		right: 40px;
+	}
+	.todo .text {
+		width: 75%;
 	}
 }
