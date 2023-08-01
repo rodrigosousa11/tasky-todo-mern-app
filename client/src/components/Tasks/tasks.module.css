@@ -4,7 +4,7 @@ body {
 }
 
 .tasks-page {
-	padding: 32px;
+	padding: 40px;
 	height: 100vh;
 }
 
@@ -92,15 +92,19 @@ h4 {
 }
 
 .addPopup {
+	width: 64px;
+	height: 64px;
 	position: fixed;
-	bottom: 32px;
-	right: 32px;
+	bottom: 40px;
+	right: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 70px;
-	color: var(--primary);
+	font-size: 60px;
+	color: var(--light);
 	cursor: pointer;
+	background-color: var(--primary);
+	border-radius: 50%;
 }
 
 .addPopup:hover {
@@ -127,7 +131,7 @@ h4 {
 	transform: translate(-50%, -50%);
 	width: 100%;
 	max-width: 450px;
-	background-color: var(--light);
+	background-color: #eeeeee;
 	padding: 32px;
 	border-radius: 16px;
 }
@@ -152,11 +156,12 @@ h4 {
 	appearance: none;
 	outline: none;
 	border: none;
-	background-color: #ffffff;
+	background-color: var(--light);
 	padding: 14px;
 	border-radius: 16px;
 	width: 100%;
-	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.219);
+	height: 45px;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.096);
 	font-size: 20px;
 }
 
@@ -183,8 +188,8 @@ h4 {
 
 @media screen and (max-width: 480px) {
 	h1 {
-		font-size: 34px;
-		margin: 15px 0 15px 0;
+		font-size: 30px;
+		margin: 30px 0 15px 0;
 	}
 
 	h4 {
@@ -195,13 +200,21 @@ h4 {
 		margin-top: 20px;
 		font-size: 18px;
 	}
+
 	.todo {
 		height: 50px;
 	}
+
 	.popup {
 		width: 90%;
-		padding: 24px;
+		padding: 20px;
 	}
+
+	.button {
+		padding: 12px 24px;
+		font-size: 16px;
+	}
+
 	.tasks-page {
 		padding: 20px;
 	}
@@ -212,5 +225,12 @@ h4 {
 
 	.leave-container svg {
 		font-size: 40px;
+	}
+	.addPopup {
+		width: 54px;
+		height: 54px;
+		font-size: 50px;
+		bottom: 40px;
+		right: 40px;
 	}
 }

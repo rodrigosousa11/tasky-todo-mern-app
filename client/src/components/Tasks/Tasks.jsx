@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./tasks.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { IoAddCircle } from "react-icons/io5";
+import { IoAdd } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import axios from "axios";
@@ -161,7 +161,7 @@ const Tasks = () => {
 				className={styles["addPopup"]}
 				onClick={() => setPopupActive(true)}
 			>
-				<IoAddCircle />
+				<IoAdd />
 			</div>
 			{popupActive ? (
 				<div className={styles["pop-container"]}>
@@ -179,6 +179,7 @@ const Tasks = () => {
 								className={styles["add-todo-input"]}
 								onChange={(e) => setNewTodo(e.target.value)}
 								value={newTodo}
+								placeholder="e.g. get some bread"
 							/>
 							<div className={styles["button"]} onClick={addTodo}>
 								Add
