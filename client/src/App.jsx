@@ -8,6 +8,7 @@ import {
 import Tasks from "./components/Tasks/Tasks";
 import Registration from "./components/Signup/Registration";
 import Login from "./components/Login/Login";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	const [authenticated, setAuthenticated] = useState(false);
@@ -32,6 +33,7 @@ function App() {
 				<Route path="/register" element={<Registration />} />
 				<Route path="*" element={<Navigate to="/register" replace />} />
 			</Routes>
+			<Footer />
 		</Router>
 	);
 }
