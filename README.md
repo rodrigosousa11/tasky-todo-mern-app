@@ -52,8 +52,8 @@ npm install
 Create a .env file in the server directory and set the following environment variables:
 
 ```md
-MONGODB_URI=your-mongodb-uri
-JWT_SECRET=your-jwt-secret
+MONGO=your-mongodb-uri
+JWT=your-jwt-secret
 ```
 
 Replace your-mongodb-uri with your MongoDB connection URI and your-jwt-secret with a random string used for JWT token encryption.
