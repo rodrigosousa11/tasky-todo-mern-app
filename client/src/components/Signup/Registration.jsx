@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./registration.module.css";
 
-const api_base = "http://localhost:3000";
+const api_base = "https://tasky-7jcp.onrender.com";
 
 const Registration = () => {
 	const navigate = useNavigate();
@@ -57,7 +57,11 @@ const Registration = () => {
 				</div>
 			</div>
 			<div className={styles.right}>
-				<form ref={formRef} className={styles.form} onSubmit={handleRegister}>
+				<form
+					ref={formRef}
+					className={styles.form}
+					onSubmit={handleRegister}
+				>
 					<h1 className={styles.label}>Sign up to Tasky</h1>
 					<input
 						type="text"

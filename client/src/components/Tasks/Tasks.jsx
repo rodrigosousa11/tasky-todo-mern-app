@@ -7,7 +7,7 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const api_base = "http://localhost:3000";
+const api_base = "https://tasky-7jcp.onrender.com";
 
 const Tasks = () => {
 	const [todos, setTodos] = useState([]);
