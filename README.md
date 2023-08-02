@@ -43,7 +43,7 @@ npm install
 ```
 
 ```md
-cd ../server
+cd server
 npm install
 ```
 
@@ -52,8 +52,8 @@ npm install
 Create a .env file in the server directory and set the following environment variables:
 
 ```md
-MONGODB_URI=your-mongodb-uri
-JWT_SECRET=your-jwt-secret
+MONGO=your-mongodb-uri
+JWT=your-jwt-secret
 ```
 
 Replace your-mongodb-uri with your MongoDB connection URI and your-jwt-secret with a random string used for JWT token encryption.
@@ -66,7 +66,7 @@ npm run dev
 ```
 ```md
 # Terminal 2 - Backend
-cd server
+cd client
 npm start
 ```
 
@@ -75,6 +75,12 @@ npm start
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 
 
