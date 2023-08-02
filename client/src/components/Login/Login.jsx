@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./login.module.css";
 
-const api_base = "https://tasky-7jcp.onrender.com";
+const api_base = "https://tasky-api-tv0b.onrender.com";
 
 const Login = ({ setAuthenticated }) => {
 	const navigate = useNavigate();
