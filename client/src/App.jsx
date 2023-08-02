@@ -21,7 +21,7 @@ function App() {
 						authenticated ? (
 							<Tasks />
 						) : (
-							<Navigate to="/login" replace />
+							<Navigate to="/register" replace />
 						)
 					}
 				/>
