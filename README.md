@@ -2,6 +2,8 @@
 
 Tasky is a web application built using the MERN (MongoDB, Express, React, Node.js) stack. It allows users to manage their tasks by adding, updating (marking as completed or not), and deleting them. The app also features user authentication to secure task management for each individual user.
 
+Both frontend and backend deployed on [Render](https://render.com/).
+
 ## Features
 
 - User Registration: Users can sign up for a new account by providing their first name, last name, email, and password.
