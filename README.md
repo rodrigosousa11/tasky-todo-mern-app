@@ -4,6 +4,8 @@ Tasky is a web application built using the MERN (MongoDB, Express, React, Node.j
 
 Both frontend and backend deployed on [Render](https://render.com/).
 
+Take a look 👉 [Website](https://tasky-7jcp.onrender.com) 
+
 ## Features
 
 - User Registration: Users can sign up for a new account by providing their first name, last name, email, and password.
