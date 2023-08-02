@@ -1,6 +1,6 @@
 .container {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 95vh;
 	background-color: var(--light);
 	display: flex;
 	align-items: center;
@@ -9,7 +9,7 @@
 }
 
 .left {
-	height: 100vh;
+	height: 95vh;
 	flex: 1;
 	padding-right: 90px;
 	display: flex;
@@ -31,7 +31,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 95vh;
 	background-color: var(--primary);
 }
 
