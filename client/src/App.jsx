@@ -30,7 +30,7 @@ function App() {
 					element={<Login setAuthenticated={setAuthenticated} />}
 				/>
 				<Route path="/register" element={<Registration />} />
-				<Route path="*" element={<Navigate to="/login" replace />} />
+				<Route path="*" element={<Navigate to="/register" replace />} />
 			</Routes>
 		</Router>
 	);
