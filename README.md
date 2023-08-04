@@ -23,6 +23,15 @@ Take a look 👉 [Website](https://tasky-7jcp.onrender.com)
 - Database: MongoDB
 - User Authentication: JWT (JSON Web Tokens), Bcrypt
 
+## Some Images
+
+### Sign Up Page
+![Sign Up](https://github.com/rodrigosousa11/tasky-todo-mern-app/assets/96240973/eb38388c-9665-4409-97eb-77d481a36994)
+### Sign In Page
+![Sign In](https://github.com/rodrigosousa11/tasky-todo-mern-app/assets/96240973/f362d16d-72d4-4f69-90b1-a6fbbcad34d2)
+### Tasks Page
+![Tasks Page](https://github.com/rodrigosousa11/tasky-todo-mern-app/assets/96240973/a1ee4086-26e5-4895-b7d5-021889e6ffd5)
+
 ## Prerequisites
 
 Before running the project locally, ensure you have the following installed:
